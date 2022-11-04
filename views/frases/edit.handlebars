@@ -1,0 +1,12 @@
+<div class="frase-form-container">
+    <a href="/frases/dashboard">Voltar</a>
+    <h1>Editando uma frase</h1>
+    <form action="/frases/edit" method="post">
+    <input type="hidden" name="id" value="{{frase.id}}">
+        <div class="form-control">
+            <label for="title">Frase:</label>
+            <input type="text" name="title" placeholder="Digite a sua frase..." value="{{frase.title}}">
+        </div>
+        <input type="submit" value="Editar Frase">
+    </form>
+</div>

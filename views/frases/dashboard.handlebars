@@ -1,0 +1,25 @@
+<div class="dashboard">
+    <div class="title-container">
+        <h2>Dashboard</h2>
+        <a href="/frases/add" class="btn">Criar Frase</a>
+    </div>
+    <h3>Suas frases</h3>
+    <ul>
+        {{#each frases}}
+            <li>
+                <span class="label">{{this.title}}</span>
+                <span class="actions">
+                    <a href="/frases/edit/{{this.id}}" class="btn">Editar</a>
+                    <form action="/frases/remove" method="post">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="submit" value="Excluir" class="btn">
+                    </form>
+                </span>
+            </li>
+        {{/each}}
+    </ul>
+    {{#if emptyFrases}}
+    <p>Ainda não há nenhuma frase aqui, comece a criar <a href="/frases/add">por aqui!</a></p>
+    {{/if}}
+
+</div>
